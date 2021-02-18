@@ -5,7 +5,7 @@ completelist = []
 itemValue = 'pricePerUnit'
 listKeys = ['instanceType', 'memory', 'vcpu', 'storage', 'networkPerformance', 'tenancy']
 
-with open('/Users/mahdifrid/Desktop/file.json', 'r') as data : 
+with open('/Users/mahdifrid/Desktop/PricingCloud/file.json', 'r') as data : 
     json_data = json.load(data)
 
 instanceType = (json_data["product"]["attributes"])

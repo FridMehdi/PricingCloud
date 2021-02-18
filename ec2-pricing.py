@@ -3,8 +3,9 @@ import boto3
 
 pricing_client = boto3.client('pricing', region_name='us-east-1')
 def get_products(region):
-    items = ["t2.nano"]
-    for item in items: 
+    items = ["t2.nano", "t2.micro"]
+    products = []
+    for item in items:
         paginator = pricing_client.get_paginator('get_products')
         response_iterator = paginator.paginate(
             ServiceCode="AmazonEC2",
@@ -41,12 +42,13 @@ def get_products(region):
                 }
             ],
         )
-        products = []
+        dictproduct = {}
         for response in response_iterator:
             for priceItem in response["PriceList"]:
                 priceItemJson = json.loads(priceItem)
-                #products.append(priceItemJson)
-        print(json.dumps(priceItemJson, indent=4))
+                dictproduct.update(priceItemJson)
+                products.append(dictproduct)
+    print(json.dumps(products, indent=4))
 
 if __name__ == '__main__':
     get_products('EU (Paris)')
