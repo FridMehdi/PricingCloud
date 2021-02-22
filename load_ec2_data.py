@@ -48,7 +48,4 @@ def get_products(region):
                 priceItemJson = json.loads(priceItem)
                 dictproduct.update(priceItemJson)
                 products.append(dictproduct)
-    print(json.dumps(products, indent=4))
-
-if __name__ == '__main__':
-    get_products('EU (Paris)')
+    return products

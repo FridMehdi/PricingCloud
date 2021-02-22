@@ -1,0 +1,1 @@
+[{"memory": "0.5 GiB", "vcpu": "1", "storage": "EBS only", "networkPerformance": "Low", "instanceType": "t2.nano", "tenancy": "Shared", "USD": "0.0066000000"}, {"memory": "1 GiB", "vcpu": "1", "storage": "EBS only", "networkPerformance": "Low to Moderate", "instanceType": "t2.micro", "tenancy": "Shared", "USD": "0.0132000000"}]
