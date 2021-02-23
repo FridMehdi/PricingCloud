@@ -2,8 +2,8 @@ import json
 import boto3
 
 pricing_client = boto3.client('pricing', region_name='us-east-1')
-def get_products(region):
-    items = ["t2.nano", "t2.micro"]
+def get_products(region, list_of_instances ):
+    items = list_of_instances
     products = []
     for item in items:
         paginator = pricing_client.get_paginator('get_products')
