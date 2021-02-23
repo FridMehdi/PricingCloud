@@ -32,9 +32,4 @@ def read_ec2_Ondemand(region_id: str = None,list_ec2_instances: Optional[List[st
     
     upload_file_to_bucket(bucketName,'jsonfiles/data.json')
     download_file_from_bucket(bucketName,'data.json','jsonfiles/instances_EC2.json')
-    return FileResponse("jsonfiles/instances_EC2.json", media_type='application/octet-stream',filename="instances_EC2.json")
-
-
-
-
-#     
+    return FileResponse("jsonfiles/instances_EC2.json", media_type='application/octet-stream',filename="instances_EC2.json")    
